@@ -7,6 +7,11 @@ const output = document.getElementById('output');
 const targetInputContainer = document.querySelector(targetId + ".input-container")
 let isError = false;
 
+addEntryButton.addEventListener("click", addEntry);
+calorieCounter.addEventListener('submit', calculateCalories)
+clearButton.addEventListener('click', clearForm)
+
+
 
 
 function cleanInputString(str){
@@ -53,7 +58,6 @@ function addEntry() {
     return calories;
   }
 
-  addEntryButton.addEventListener("click", addEntry);
 
 
 function calculateCalories(e) {
@@ -91,8 +95,6 @@ function calculateCalories(e) {
   output.classList.remove('hide');
 }
 
-calorieCounter.addEventListener('submit', calculateCalories)
-
 
 function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container'));
@@ -105,5 +107,3 @@ function clearForm() {
   output.innerText = '';
   output.classList.add('hide');
 }
-
-clearButton.addEventListener('click', clearForm)
